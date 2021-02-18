@@ -64,3 +64,4 @@ public class HelloProcessing1 extends PApplet
             y2dir = - y2dir;
         }
     }
+}
