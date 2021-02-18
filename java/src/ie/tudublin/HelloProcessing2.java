@@ -2,74 +2,63 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
+// HelloProcessing2 is the subclass of PApplet
 public class HelloProcessing2 extends PApplet
 {
+	float x = 0;
 
+	// first bit of code that's executed
 	public void settings()
 	{
-		// If you want to use the width and 
-		// height variables, they have to be after settings 
-		// is called
-		size(500, 500);
+		size(500, 500); // 5oo px by 500 px
 	}
 
-	
-	public void setup() {
+	// next piece of code that's executed automatically
+	public void setup()
+	{
 		
 	}
-
-	// These are fields in the class now and can be used in 
-	// any of the methods in the HelloProcessing2 class 
-
-	float x = 300;
-	int i;
-	String s;
-	boolean b;
 	
+	// This draw method is called 60 times in a second, already in a loop 
+	// The codes in here will be executed every frame essentially 
 	public void draw()
-	{	// Takes 1 or 3 parameters. 1 is greyscale, 3 is RGB
-		background(0);         
-
-		// Turns off drawing around shapes
-		noStroke();
-
-		// Sets the fill color
-		fill(0, 0, 255); 
-
-		// width, height mouseX and mouseY are variables defined
-		// in the PApplet superclass. 
-		// width & height give the width and height of the drawing window
-		// mouseX and mouseY give the current X and Y
-		// coordinates of the mouse
-		// Draw an ellipse. cx, cy, w and h		
-		ellipse(x, height / 2, mouseX, mouseY);
-
-		fill(255, 0, 0);
-
-		// Draws a rect ltx (top left X), tly (top left Y), w and h 
-		rect(200, 90, 50, 90);
-
-		stroke(0, 255, 255);
-
-		// Changes the thickness of lines
-		strokeWeight(1);
-
-		// Draws a line x1, y1, x2, y2
-		line (200, 300, 100, 50);
+	{	
+		/*
+		background(255, 0, 0); // set the background colour as black 
+		stroke(0, 255, 0); // Pen colour (white)
+		line(10, 10, 200, 200); // line - x1, y1, x2, y2
 
 		noStroke();
-		fill(0, 255, 0);
-		// Draws a triangle. 3 vertices 
-		triangle(300, 300, 350, 400, 250, 450);
+		ellipse(200, 200, 100, 50); // circle - cx(center x), cy(center y), w(width), h(height)
+		fill(0, 0, 255);
+		rect(20, 100, 70, 90); // rectangle - tlx(top left x), tly(top left y), w, h
+		point(200, 60); // single pixel - x, y
+		fill(0, 255, 255);
+		triangle(200, 90, 300, 200, 10, 60); // triangle - x1, y1, x2, y2, x3, y3
 
-		stroke(255);
-		// Draws a single point
-		point(400, 50);
+		fill(0);
+		text("Hello World", 300, 300);
+		*/
+		
+		/*
+		background(0);
+		// ellipse(x, height / 2, 50, 50); // height/2 -> half way divided by window
+		ellipse(x, height / 2, mouseX, mouseY); // height/2 -> half way divided by window
+		x ++;
+		println(x);
+		*/
+		background(254, 0, 0);
+		noStroke();
+		fill(250, 254, 0);
+		ellipse(250, 300, 400, 400);
+		noStroke();
+		fill(0, 254, 254);
+		triangle(50, 450, 250, 50, 450, 450); 
+		fill(213, 204, 201);
+		ellipse(250, 255, 200, 100);
+		fill(0);
+		ellipse(250, 255, 70, 70);
 
-		// Changes the thickness of lines
-		strokeWeight(3);
-
-		line(20, 400, 200, 410);
 
 	}
 }

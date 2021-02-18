@@ -6,7 +6,8 @@ public class Main
     {
         System.out.println("Hello world");
 
-        Animal misty = new Dog("Misty");
+        // Polymorphism - We use the type as a base class but the instance is one of the subclasses of the base class 
+        Animal misty = new Dog("Misty"); // That's why we can say misty = Animal because both are animals 
 
         Animal topCat = new Cat("TopCat");
 
@@ -20,17 +21,15 @@ public class Main
         System.out.println(misty);
         System.out.println(topCat);
 
-        // What will get printed out??
+        
+        Cat ginger = new Cat("Ginger"); // pass ginger string to the cat 
 
-        // 1. topcat, Garfield
-        // 2. garfield, Garfield 
-
-        Cat ginger = new Cat("Ginger");
         while(ginger.getNumLives() > 0)
         {
             ginger.kill();
         }
-        ginger.kill();
+
+        ginger.kill(); // print i am dead
     }
 
     public void helloProcessing1()
@@ -48,23 +47,13 @@ public class Main
     public void bugZap()
     {
         String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new BugZap());
+        processing.core.PApplet.runSketch( a, new BugZap()); // instanciate the BugZap here
     }
 
-    public void loops()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Loops());
-    }
-
-    public void arrays()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Arrays());
-    }
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.arrays();
+        main.bugZap(); // start the BugZap class
     }
+    
 } 
