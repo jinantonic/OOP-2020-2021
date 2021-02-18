@@ -22,6 +22,7 @@ public class Main
         System.out.println(topCat);
 
         Cat ginger = new Cat("Ginger");  // pass ginger string to the cat 
+        
         while(ginger.getNumLives() > 0)
         {
             ginger.kill(); 
