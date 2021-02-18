@@ -54,11 +54,11 @@ public class Main
     public void loops()
     {
         String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Loops());
+        processing.core.PApplet.runSketch( a, new Loops()); // Instantiating the new Loops(), will run the PApplet
     }
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.loops();
+        main.loops(); // Calling it from main 
     }
 } 

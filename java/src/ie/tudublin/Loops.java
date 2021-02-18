@@ -2,11 +2,13 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Loops extends PApplet {
+public class Loops extends PApplet 
+{
 
-    public void settings() {
-        size(500, 500);
-        cx = width / 2;
+    public void settings() 
+    {
+        size(500, 500); // size of the screen 
+        cx = width / 2; // width is divided by 2 
         cy = height / 2;        
     }
 
@@ -15,22 +17,29 @@ public class Loops extends PApplet {
     float cx;
     float cy;
 
-    public void keyPressed() {
+    public void keyPressed() 
+    {
         // the value of mode will be the number of the 
         // number key pressed
-        if (keyCode >= '0' && keyCode <= '9')
+        if (keyCode >= '0' && keyCode <= '9') // Assigning the value of the numeric value 0 to 9 to the variable mode 
             mode = keyCode - '0';
     }
 
-    public void setup() {
-        colorMode(HSB);
+    public void setup() 
+    {
+        colorMode(HSB); // setting the colour mode to HSB instead of RGB
     }
 
-    public void draw() {
-        background(0);
+    public void draw() 
+    {
+        background(0); // Setting the background black 
         noStroke();
-        switch (mode)
+        switch (mode) // Switching the value of mode 
         {
+            /* case 0:
+                ellipse(cx, cy, 100, 100);
+                break;
+            */
             case 0:
                 fill(50, 255, 255);                    
                 if (mouseX < cx)
