@@ -50,10 +50,17 @@ public class Main
         processing.core.PApplet.runSketch( a, new BugZap()); // instanciate the BugZap here
     }
 
+    public void arrays()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Arrays()); // instanciate the BugZap here
+    }
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.bugZap(); // start the BugZap class
+        main.arrays(); // start the BugZap class
     }
+    
     
 } 
