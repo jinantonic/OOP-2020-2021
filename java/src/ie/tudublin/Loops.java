@@ -33,7 +33,7 @@ public class Loops extends PApplet
     public void draw() 
     {
         background(0); // Setting the background black 
-        noStroke();
+        noStroke(); // don't draw stroke outside of the shape
         switch (mode) // Switching the value of mode 
         {
             /* case 0:
@@ -42,9 +42,9 @@ public class Loops extends PApplet
             */
             case 0:
                 fill(50, 255, 255);                    
-                if (mouseX < cx)
+                if (mouseX < cx)  
                 {
-                    rect(0, 0, cx, height);
+                    rect(0, 0, cx, height); // height = height of the screen 
                 }
                 else
                 {
@@ -53,7 +53,7 @@ public class Loops extends PApplet
                 break;
             case 1:
                 fill(50, 255, 255);                                    
-                if (mouseX < cx && mouseY < cy)
+                if (mouseX < cx && mouseY < cy) // cx = centre x 
                 {
                     rect(0, 0, cx, cy);
                 }
@@ -72,13 +72,13 @@ public class Loops extends PApplet
                 break;
             case 2:
             {
-                int numRects = (int)(mouseX / 10.0f);
+                int numRects = (int)(mouseX / 10.0f); // There are 10 rectangulars 
                 float w = width / (float) numRects;
-                float cgap = 255 / (float) numRects;
+                float cgap = 255 / (float) numRects; // gap 
                 for(int i = 0 ; i < numRects ; i ++)
                 {
-                    fill(i * cgap, 255, 255);
-                    rect(i * w, 0, w, height);
+                    fill(i * cgap, 255, 255); 
+                    rect(i * w, 0, w, height); // draw rectangles 
                 }
                 break;
             }
@@ -90,7 +90,7 @@ public class Loops extends PApplet
                 for(int i = 0 ; i < numCircles ; i ++)
                 {
                     fill(cgap * i, 255, 255);
-                    ellipse(w / 2 + (i * w), cy, w, w);
+                    ellipse(w / 2 + (i * w), cy, w, w); // the first one is the centre point of the circle 
                 }
             }
             break;
