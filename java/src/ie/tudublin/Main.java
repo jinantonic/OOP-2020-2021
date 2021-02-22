@@ -56,9 +56,21 @@ public class Main
         String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new Loops()); // Instantiating the new Loops(), will run the PApplet
     }
+
+    public void arrays()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Arrays());
+    }
+    public void life()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Life());
+    }
     public static void main(String[] args)
     {
         Main main = new Main();
         main.loops(); // Calling it from main 
+        main.life();
     }
 } 
