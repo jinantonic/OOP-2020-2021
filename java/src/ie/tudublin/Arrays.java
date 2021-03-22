@@ -2,7 +2,8 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Arrays extends PApplet {
+public class Arrays extends PApplet 
+{
 
     // This is how the map function works!
     public float map1(float from, float start1, float stop1, float start2, float stop2) {
