@@ -21,10 +21,9 @@ public class ArraysSke extends PApplet
         textAlign(CENTER, CENTER);
         for(int i = -5; i <= 5; i++)
         {
-            float x = map(i, -5, 5, border, width - border);
-            println(x);
+            float x = map1(i, -5, 5, border, width - border);
             line(x, border, x, height - border);
-            //line(border, x, width - border, x);
+            line(border, x, width - border, x);
             fill(255);
             text(i, x, border * 0.5f); // 2 pieces of texts
             text(i, border * 0.5f, x);
@@ -51,6 +50,11 @@ public class ArraysSke extends PApplet
 
     int mode = 0;
 
+    // Allocating arrays
+    float[] rainfall = {45, 37, 55, 27, 38, 50, 79, 48, 104, 31, 100, 58};
+    String[] months = {"Jan", "Feb", "March", "April", "May", "June", "July", "August", "Sept", "Oct", "Nov", "Dec"};
+    float[] arr = new float[100]; // Other way to allocate the array, 100 floar array
+
     public void keyPressed() {
         // the value of mode will be the number of the
         // number key pressed
@@ -58,15 +62,68 @@ public class ArraysSke extends PApplet
             mode = keyCode - '0';
     }
 
-    public void setup() {
+    public void setup()
+    {
         colorMode(RGB);
 
+        for(int i = 0; i < rainfall.length; i++)// rainfall.length gives you the length of the rainfall array
+        {
+            //System.out.println(x);
+            println(months[i] + "\t" + rainfall[i]);
+        } 
+        
+        // Enhanced for loop
+        for(float f:rainfall) // Every element in rainfall is copied into f 
+        {
+            println(f);
         }
 
+        // What month had the most and least rainfall?
+        // What is the total rainfall?
+        // What is the average rainfall?
+        int minIndex = 0; // These will hold the position where we find min and max 
+        int maxIndex = 0;
+        float sum = 0;
+        for(int i = 0; i < rainfall.length; i++)
+        {
+            if(rainfall[i] < rainfall[minIndex]) // if rainfall at position i is less than rainfall at position minIndex, then that becomes the new minIndex
+            {
+                minIndex = i;
+            }
+            if(rainfall[i] > rainfall[maxIndex])
+            {
+                maxIndex = i;
+            }
+            sum += rainfall[i];
+        }
+
+        float average = sum / (float) rainfall.length;
+
+        println("Least rainfall was in " + months[minIndex] + " with " + rainfall[minIndex]);
+        println("Most rainfall was in " + months[maxIndex] + " with " + rainfall[maxIndex]);
+        println("Average rainfall: " + average);
+
+        // rect(x, y, w, h); -h will draw the rectangle upwards
+        // Draw a bar chart of the rainfall
+        // Use the map function
+        colorMode(HSB);
+        float w = width / (float) rainfall.length; // width of the individual bar
+        for(int i = 0; i < rainfall.length; i++)
+        {
+            noStroke();
+            fill(random(255), 255, 255);
+            float x = map(i, 0, rainfall.length, 0, width);
+            rect(x, height, w, -rainfall[i]);
+        }
+    }
+    
 
 
     public void draw() {
-        background(0);
-        drawGrid();
+        //background(0);
+        //drawGrid();
+        colorMode(HSB);
+        float c = map(mouseX, 0, width, 0, 255);
+        //background(c, 255, 255);
     }
 }
