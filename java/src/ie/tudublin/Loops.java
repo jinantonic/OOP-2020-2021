@@ -30,49 +30,53 @@ public class Loops extends PApplet
         colorMode(HSB); // setting the colour mode to HSB instead of RGB
     }
 
-<<<<<<< HEAD
+    float offset = 0;
+    
     public void draw() 
     {
         background(0); // Setting the background black 
         noStroke(); // don't draw stroke outside of the shape
         switch (mode) // Switching the value of mode 
-=======
-    float offset = 0;
-
-    public void draw() {
-        background(0);
-        noStroke();
-        switch (mode)
->>>>>>> 2931dede6b6757f11406261bcb7ac673cb273129
         {
             /* case 0:
                 ellipse(cx, cy, 100, 100);
                 break;
             */
-            case 0:
-<<<<<<< HEAD
-                fill(50, 255, 255);                    
-                if (mouseX < cx)  
-                {
-                    rect(0, 0, cx, height); // height = height of the screen 
-=======
+            /*case 0:
             {
-                float w = 200;
-                float h = 50;
-                rectMode(CENTER);                    
-                if (mouseX > cx -  (w /2) && mouseX < cx + (w/2) && mouseY > cy - (h/2) && mouseY < cy + (h/2))
+                fill(50, 255, 255);
+                if(mouseX < cx)
+                {
+                    rect(0, 0, cx, height);
+                }
+                else
+                {
+                    rect(cx, 0, cx, height);
+                }
+            }*/
+            case 0:
+            {
+                float w = 200; // width
+                float h = 50; // height of the button 
+                rectMode(CENTER); // the first 2 parameters of the rec function will be the centre of the rectangle rather than the top left hand corner of the rectangle              
+                
+                // cx - (w/2) -> left handside of the button
+                // cx + (w/2 -> right handside of the button 
+                // cy - (h/2) -> top 
+                // cy + (h/2) -> bottom 
+                if (mouseX > cx - (w/2) && mouseX < cx + (w/2) && mouseY > cy - (h/2) && mouseY < cy + (h/2))
                 {
                     fill(50, 255, 255);                
->>>>>>> 2931dede6b6757f11406261bcb7ac673cb273129
                 }
                 else
                 {
                     fill(200, 255, 255);
                 }
-                rect(cx, cy, w, h);
+                rect(cx, cy, w, h); // cx, cy will give us the cordinates of the centre of the rectangle
                 break;
-            }                
+            }              
             case 1:
+            {
                 fill(50, 255, 255);                                    
                 if (mouseX < cx && mouseY < cy) // cx = centre x 
                 {
@@ -91,6 +95,8 @@ public class Loops extends PApplet
                     rect(cx, cy, cx, cy);
                 }
                 break;
+            }
+
             case 2:
             {
                 int numRects = (int)(mouseX / 10.0f); // There are 10 rectangulars 
@@ -98,11 +104,12 @@ public class Loops extends PApplet
                 float cgap = 255 / (float) numRects; // gap 
                 for(int i = 0 ; i < numRects ; i ++)
                 {
-                    fill(i * cgap, 255, 255); 
-                    rect(i * w, 0, w, height); // draw rectangles 
+                    fill(i * cgap, 255, 255);
+                    rect(i * w, 0, w, height);// draw rectangles 
                 }
                 break;
             }
+           
             case 3:
             {
                 int numCircles = (int)(mouseX / 10.0f);
@@ -115,6 +122,7 @@ public class Loops extends PApplet
                 }
                 break;
             }
+            
             case 4:
             {
                 int numLines = 5;
@@ -127,15 +135,16 @@ public class Loops extends PApplet
                     float y = cos(angle) * radius;
                     line(cx, cy, cx + x, cy + y);                    
                 }
+                break;
             }
-            break;
+            
             case 5:
             {
                 rectMode(CORNER);
                 int numRects = (int) mouseX / 10;
                 float w = width / (float) numRects;
                 float cgap = 255 / (float) numRects;
-                for(int i = 0 ; i < numRects ; i ++)
+                for(int i = 0 ; i < numRects ; i++)
                 {
                     fill(cgap * i, 255, 255);
                     rect(i * w, i * w, w, w);

@@ -70,7 +70,7 @@ public class Main
     public static void main(String[] args)
     {
         Main main = new Main();
-        //main.loops(); // Calling it from main 
-        main.life();
+        main.loops(); // Calling it from main 
+        //main.life();
     }
 } 
