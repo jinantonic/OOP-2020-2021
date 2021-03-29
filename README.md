@@ -2,9 +2,9 @@
 
 # Teams Links for online classes:
 
-- [Monday Class](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjUzNjZlMDMtOTNhZi00MDYyLThkODgtNzQxYjBjZDY3YTg0%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
-- [Wednesday Labs](https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWVjNDM4NTAtOGJhOC00MjEyLTkzMTMtNzA3OTgwOGNhZTYw%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
-- [Thursday Tutorial](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGU3Mzg3N2YtMzkxZC00OThjLWFmNjItYzVlNDZhNWY5OWY2%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
+- [Monday 12:00-14:00 Class](https://teams.microsoft.com/l/meetup-join/19%3ameeting_YjUzNjZlMDMtOTNhZi00MDYyLThkODgtNzQxYjBjZDY3YTg0%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
+- [Wednesday 16:00-18:00 Labs](https://teams.microsoft.com/l/meetup-join/19%3ameeting_OWVjNDM4NTAtOGJhOC00MjEyLTkzMTMtNzA3OTgwOGNhZTYw%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
+- [Thursday 09:00 Tutorial](https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGU3Mzg3N2YtMzkxZC00OThjLWFmNjItYzVlNDZhNWY5OWY2%40thread.v2/0?context=%7b%22Tid%22%3a%22766317cb-e948-4e5f-8cec-dabc8e2fd5da%22%2c%22Oid%22%3a%2261aab78b-a857-4647-9668-83d4cca5de03%22%7d)
 - [Sign in Sheet for labs](https://docs.google.com/spreadsheets/d/1dpzq-iS3DPHBin2oT_txSlmsIEVo_zs524FemMm-2vI/edit?usp=sharing)
 
 Resources
@@ -38,6 +38,203 @@ Resources
 - https://github.com/skooter500/OOP-2018-Lab-Test-2
 - https://github.com/skooter500/OOP_Labtest1_2017_Starter
 - https://github.com/skooter500/OOP-LabTest1-2016
+
+# Week 9 - YASC
+## Lecture
+- [Download YASC](https://skooter500.itch.io/)
+- [YASC code](http://github.com/skooter500/YASC)
+- [Video of the class](https://web.microsoftstream.com/video/a5104e6c-40a7-4ff7-b131-cffed3913220?list=studio)
+
+## Lab
+
+### Part 1
+
+Fork [this repo](https://github.com/skooter500/MusicVisuals) which has the starter code and examples for your assignment. Clone your fork and make sure it compiles and runs ok. 
+
+### Part 2
+
+Today you can make two more classes to encapsulate the behaviour of health and ammo powerups as per this video:
+
+[![YouTube](http://img.youtube.com/vi/Bfr0S6oTBsc/0.jpg)](https://www.youtube.com/watch?v=Bfr0S6oTBsc)
+
+
+To complete this lab!
+
+- Update your forks of the master branch to get the code for the moveable Player we made in Monday's class. Create a branch for your work today.
+- Make a class called Health. Initially it should spawn off screen and move in a random direction onscreen. It could spawn from the top, bottom, left or right side of the screen. You can use yasc.random to generate random numbers. I wrote a respawn method on the class and call it from the constructor to set the initial x, y, dx and dy values. Notice how the health is drawn and notice in the video that the health is rotating as well as moving. If the health goes off the side of the screen it should respawn. Don't forget to create an instance of the Health in YASC.java and call update and render.
+- Do the same for Ammo
+- Add health and ammo fields to the Player class and print the health and ammo beside the player
+- Add code in YASC.java to check collisions between the player and either of the powerups and add to the player's health and ammo stats. To check collisions, you can check id the distance between the player and the powerup < the sum of the two radii. You can use the ```dist``` function to calculate the distance. 
+
+# Week 8 - Frequency Domain Analysis, transcription, frequency bands
+## Lecture
+- [Video of the class](https://web.microsoftstream.com/video/e9483fdd-c3d6-4b48-a88b-8adbf7752175)
+	- FFT visualisation, transcription, audio bands
+
+## Tutorial
+- [Video of the tutorial](https://web.microsoftstream.com/video/c3027ca1-ed72-432d-be2c-c09bb9683fc8)
+	- We did some coding bat exercises and also made a 3D cube that responds to sound:
+
+![Image](images/p40.png)
+
+No lab due to the bank holiday
+
+# Week 7 - Audio
+
+## Tutorial
+- [Video of the Tutorial](https://web.microsoftstream.com/video/9dcc9000-39e8-4fce-a0e6-a9f75084f6f9?list=studio)
+
+## Lab 
+### Learning Outcomes
+- Practice for loops
+- Demonstrate an understanding of how digital audio works
+- Practice computational thinking and problem solving
+- Have fun making beautiful things 
+
+Update your forks and have a look at Audio1.java this is the code we wrote on Monday with some modifications. Checkout the ```keyPressed``` function. This starts and restarts the audio file when you press space. Also it sets the value of the ```which``` variable to be the numbers 0-5 when you press the appropriate key on the keyboard. If your computer wont play the audio file for some reason,you can uncomment the code to read audio from the microphone instead or use a .wav file instead.
+
+Ok now check out this video of 5 visuals you can make today. Pressing the keys 0-4 on the keyboard should change the visual in your sketch.
+
+[![YouTube](http://img.youtube.com/vi/xF7VrXZqLko/0.jpg)](https://www.youtube.com/watch?v=xF7VrXZqLko)
+
+- 0 - The wavy lines visual
+- 1 - The waveform
+- 2 - The waveform drawn down the 4 sides of the screen
+- 3 - The circle - Use the lerped amplitude to control the size of the circle
+- 4 - The square - Again use the lerped amplitude to control the size of the square. You can also use rectMode(CENTER) to make the x and y parameters of the rect function determine the center of the rect rather than the coordinates of the top left corner
+- 5 - There is no visual associated with 5 in the video, so come up with your own!
+
+## Lecture
+
+- [Minim library reference](http://code.compartmental.net/minim/)
+- [Video of the class](https://web.microsoftstream.com/video/530ea615-e38c-4c13-819d-d2b39a90519e?list=studio)
+- [lerp](https://processing.org/reference/lerp_.html)
+- [Audio1.java](java/src/ie/tudublin/Audio1.java)
+
+Some audio responsive stuff I have been working on recently:
+
+[![YouTube](http://img.youtube.com/vi/4Fc_OW4M5AU/0.jpg)](https://www.youtube.com/watch?v=4Fc_OW4M5AU)
+
+[![YouTube](http://img.youtube.com/vi/xF7VrXZqLko/0.jpg)](https://www.youtube.com/watch?v=xF7VrXZqLko)
+
+[![YouTube](http://img.youtube.com/vi/KNymjRyr27A/0.jpg)](https://www.youtube.com/watch?v=KNymjRyr27A)
+
+# Week 6 - Star Map ArrayList, classes, CSV files
+
+##  Lab
+### Learning Outcomes
+- Make a class
+- Make constructors & accessor methods
+- Use an ArrayList
+- Develop problem solving & algorithm design skills
+
+Try this [lab test from last year](https://github.com/skooter500/OOP-LabTest-2020-Starter). You can use the StarMap example we made in the class on Monday for help.
+
+## Tutorial
+- [Video of the tutorial (Solution to the lab)](https://web.microsoftstream.com/video/d11928a7-1195-4116-9fa0-1f59a7ef9c4e?list=studio)
+
+## Lecture
+- [Video of the class](https://web.microsoftstream.com/video/2c196702-f54f-47ad-abf0-be8455d20d02)
+
+# Week 5 - Conway's Game of Life
+
+## Tutorial
+- [Video of the tutorial](https://web.microsoftstream.com/video/7dbf1ef3-3857-4952-b840-f27b3a3187a4)
+- [Life with no colors](java/src/ie/tudublin/Life.java)
+- [The colorful Game of Life we made in the tutorial](java/src/ie/tudublin/ColorfulLife.java)
+
+## Lab
+
+- [Video of the lab](https://web.microsoftstream.com/video/decb45c9-a4a6-45a9-bb25-0b299c1a3c29)
+
+### Learning Outcomes
+- Learn how to iterate over a 2D array
+- Explore the magic of cellular automata
+- Learn how to use map
+
+Update your fork of the repo from the master branch to get the bug fixed code from Monday's class and create a branch for your work today. I discovered another bug in the code we wrote on Monday. In countNeighbours, the line:
+
+```Java
+if (r != row && c != col)                
+```
+
+Should have been:
+
+```Java
+if (! (r == row && c == col))                
+```
+
+In Life.java:
+
+Write the method ```updateBoard```. This method should iterate over the board cell by cell using a nested for loop and apply the Game of Life rules:
+
+1. If the cell is alive (true) then if the cell has exactly 2 or 3 neighbours it survives (gets set to true), otherwise it dies (gets set to false)
+2. If the cell is dead (false) then it comes to life if it has exactly 3 neighbours, otherwise it stays dead in the next generation.
+
+This is important so please read carefully!!
+
+You have to read values from *board*, but you set values in *next*, which is a 2D array the same size as board. At the end of the method you *swap* board and next. I have left the swapping code in the method, so you don't have to write it. This is so that when you for example, kill a cell or bring a cell to life, you don't screw up the count for other cells in that generation.
+
+Again - in ```updateBoard```
+
+1. Write a nested for loop that gets the row and col for every cell
+2. Count the neighbours (use the method we wrote on Monday for this) 
+2. Check if the cell is alive, apply the rules for alive cells to next
+2. If the cell is dead, apply the rules for dead cells to next
+2. Swap board and next
+
+Your game of life should look like this if you implement the rules correctly (click the image for a video):
+
+[![YouTube](http://img.youtube.com/vi/SmH2r_ChmFY/0.jpg)](https://www.youtube.com/watch?v=SmH2r_ChmFY)
+
+Some extra things you can implement you can see in the video:
+
+- Increase size and change the size of the screen and see what effect this has on the simulation 
+- Press space to pause and resume the simulation
+- Press 1 to randomise the board again
+- Press 2 to clear the board
+- Press 3 to draw a cross shape and see how it evolves
+- Drag the mouse across the window to set cells at the mouse position to be alive.
+
+Some extra things you can implement that are not in the video
+
+- Draw a glider at the mouse position. This is starting pattern that will evolve a pattern that walks across the screen
+- Draw a Gosper Gun at the mouse position. This is a starting pattern that will spawn creatures indefinitely
+
+You can read more about these starting patterns and others in [this wikipedia article](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) and see examples in this video:
+
+[![YouTube](http://img.youtube.com/vi/HMYh4jKdtNU/0.jpg)](https://www.youtube.com/watch?v=HMYh4jKdtNU)
+
+If you want to learn more about cellular automata check out: 
+
+- [The Nature of Code](https://natureofcode.com/)
+- [A New Kind of Science](https://writings.stephenwolfram.com/2017/05/a-new-kind-of-science-a-15-year-view/)
+
+## Lecture
+- [Epic Conways Game of Life](https://www.youtube.com/watch?v=C2vgICfQawE)
+- [3D Game of Life](https://www.youtube.com/watch?v=dQJ5aEsP6Fs)
+- [John Conway talks about the game of life](https://www.youtube.com/watch?v=FdMzngWchDk)
+- [Video of the class](https://web.microsoftstream.com/video/d621064f-86c0-4f76-8a12-b5b9ab4cfa18)
+- [The Dream of Life](https://www.youtube.com/watch?v=wU0PYcCsL6o)
+
+There is a bug in the code we wrote in the class:
+
+The bounds checking on the arrays we wrote in the class is:
+
+```
+if (row > 0 && row < size -1 && col > 0 && col < size -1)
+```
+
+And it should be
+
+```
+if (row >= 0 && row < size -1 && col >= 0 && col < size -1)
+        
+```
+
+Thanks to Luke O Shea Scanlan for pointing this out!
+
+I pushed the corrected code to the repository
 
 # Week 4 - Arrays
 
