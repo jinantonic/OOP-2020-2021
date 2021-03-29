@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Life extends PApplet
+public class LifeSke extends PApplet
 {
     int mode = 0;
     public void keyPressed()
