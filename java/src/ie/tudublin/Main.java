@@ -53,7 +53,7 @@ public class Main
     public void arrays()
     {
         String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new ArraysSke()); // instanciate the BugZap here
+        processing.core.PApplet.runSketch( a, new Arrays()); // instanciate the BugZap here
     }
 
     public static void main(String[] args)

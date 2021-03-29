@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Arrays extends PApplet
+public class ArraysSol extends PApplet
 {
 
     // This is how the map function works!
@@ -123,7 +123,7 @@ public class Arrays extends PApplet
         // Draw a bar chart of the rainfall!!
         // Use the map function
         colorMode(HSB);
-        float w = width / (float) rainfall.length; // width of the individual bar
+        float w = width / (float) rainfall.length;
         for (int i = 0; i < rainfall.length; i++) {
             noStroke();
             fill(random(255), 255, 255);
