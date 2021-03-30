@@ -16,8 +16,6 @@ public class Life extends PApplet
     boolean[][] next = new boolean[size][size];
 
 
-    
-    
     public int countCellsAround(int row, int col)
     {
         int count = 0;
@@ -126,7 +124,7 @@ public class Life extends PApplet
     }
     
     
-    private void printBoard(boolean[][] board)
+    private void printBoard(float[][] board)
     {
         // col -> x, row -> y
         for(int row = 0; row < size; row++)
