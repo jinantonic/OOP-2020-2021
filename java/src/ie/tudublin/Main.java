@@ -62,10 +62,16 @@ public class Main
         processing.core.PApplet.runSketch( a, new Life()); // instanciate the BugZap here
     }
 
+    public void lifecolour()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new LifeColour()); // instanciate the BugZap here
+    }
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.life(); // start the BugZap class
+        main.lifecolour(); 
     }
     
     
