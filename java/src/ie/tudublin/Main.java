@@ -50,16 +50,42 @@ public class Main
         processing.core.PApplet.runSketch( a, new BugZap()); // instanciate the BugZap here
     }
 
+    public void loops()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Loops());
+    }
+
+
     public void arrays()
     {
         String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new Arrays()); // instanciate the BugZap here
     }
 
+    public void life()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Life1());
+    }
+    
+    public void colorfulLife()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new ColorfulLife());
+    }
+
+    public void starMap()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new StarMap());
+    }
+
+
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.arrays(); // start the BugZap class
+        main.starMap(); 
     }
     
     
