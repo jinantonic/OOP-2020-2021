@@ -14,6 +14,36 @@ public class Star
     private float distance;
     private float xG, yG, zG;
     private float absMag;
+
+
+
+
+    // Constructor -> The method that gets called when the object gets created
+    // They don't have a return type 
+    public Star() // Defalut constructor -> constructor that takes no parameters
+    {
+
+    }
+
+    public Star(boolean hab, String displayName, float distance, float xG, float yG, float zG, float absMag)// Parameterised constructor which will take the default values for all of those fileds
+    {
+        // Now take all those values above and assign them to the fileds in the class
+        // We can disambiguate between the filed hab and the parameter hab by using the keyword, this
+        this.hab = hab;
+        this.displayName = displayName;
+        this.distance = distance;
+        this.xG = xG;
+        this.yG = yG;
+        this.zG = zG; 
+        this.absMag = absMag;// Now all of the fields are assigned 
+    }
+
+    
+
+
+
+
+
     public boolean isHab()
     {
         return hab;
@@ -70,5 +100,21 @@ public class Star
     public void setAbsMag(float absMag)
     {
         this.absMag = absMag;
+    }
+
+   
+
+   
+
+    // toString method is the method that gets called automatically whenever you pass this object to something that expects a string
+    // Source action -> generate toString()
+    /*public String toString()
+    {
+        return hab + "\t" + displayName + "\t" + distance + "\t" + xG + "\t" + yG + "\t" + zG + "\t" + absMag;
+    }*/
+    @Override
+    public String toString() {
+        return "Star [absMag=" + absMag + ", displayName=" + displayName + ", distance=" + distance + ", hab=" + hab
+                + ", xG=" + xG + ", yG=" + yG + ", zG=" + zG + "]";
     }
 }
