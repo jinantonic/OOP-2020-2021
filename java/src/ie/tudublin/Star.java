@@ -1,5 +1,14 @@
 package ie.tudublin;
 
+import processing.data.TableRow;
+
+// CSV -> Comment seperated values file 
+// A text file as oppose to a binary file(img, mp3 file)
+// Every coloum is speerated with comma and then evey row is seperated with carriage return
+// Every line on this file corresponds to row of data and every comma delimits the column
+// Very first line contains the heading 
+
+
 // Encapsulate the interest of columns of interest into the fields of the class
 // Class has fields and methods
 // Fields being things that the class is 
@@ -24,6 +33,30 @@ public class Star
     {
 
     }
+
+
+    // Constructor that takes the table row and creates the star from a table row 
+    public Star(TableRow row)
+    {
+        // Instantiate the star from a single row from the table
+        // 1st, we have to see how to get columns from this row
+        // 2nd, we have to look at how to do the concept in java called constructor chaining 
+        // -> When you have loads of different constructors and u don't want to duplicate the code between the constructors so chain those constructors together 
+        this // Call this constructor from this constructor 
+        (
+            row.getInt("Hab?") == 1 ? true : false,
+            row.getString("Display Name"),
+            row.getFloat("Distance"),
+            row.getFloat("Xg"),
+            row.getFloat("Yg"),
+            row.getFloat("Zg"),
+            row.getFloat("AbsMag")
+        ); // The constructor below is getting called from this constructor and we can cosntruct the star by passing in row from the table
+
+    }
+
+
+
 
     public Star(boolean hab, String displayName, float distance, float xG, float yG, float zG, float absMag)// Parameterised constructor which will take the default values for all of those fileds
     {

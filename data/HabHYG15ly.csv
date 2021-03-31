@@ -1,9 +1,3 @@
-// Comment seperated values file 
-// A text file as oppose to a binary file(img, mp3 file)
-// Every coloum is speerated with comma and then evey row is seperated with carriage return
-// Every line on this file corresponds to row of data and every comma delimits the column
-// Very first line contains the heading 
-
 HabHyg,Hip,Hab?,Display Name,Hyg,BayerFlamsteed,Gliese,BD,HD,HR,Proper Name,Spectral Class,Distance,Xg,Yg,Zg,AbsMag
 0,0,1,Sol,0,Sol,,,,,Sol,G2V,0,0,0,0,4.85
 2,71681,,Rigel Kentaurus B,51923,Alpha 2 Centauri,Gl 559 B,,128621,5460,Rigel Kentaurus B,K1V,1.3,1,-0.9,0,5.69237068
