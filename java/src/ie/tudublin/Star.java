@@ -1,5 +1,6 @@
 package ie.tudublin;
 
+import processing.core.PApplet;
 import processing.data.TableRow;
 
 // CSV -> Comment seperated values file 
@@ -24,7 +25,11 @@ public class Star
     private float xG, yG, zG;
     private float absMag;
 
-
+    // 3 state system 
+    // 1. Haven't clicked anything
+    // 2. Clicked one star and want to draw the line to one star to the next star
+    // 3. Have clicked two stars
+    
 
 
     // Constructor -> The method that gets called when the object gets created
@@ -52,11 +57,30 @@ public class Star
             row.getFloat("Zg"),
             row.getFloat("AbsMag")
         ); // The constructor below is getting called from this constructor and we can cosntruct the star by passing in row from the table
-
     }
 
+    // Render each one of the stars onto the grid 
+    public void render(PApplet pa)
+    {
+        // The code below wouldn't work bc the processign libraries are stored in PApplet so have to pass papplet as a parameter
+        //float border = width * 0.1f;
+        //float x = map(xG, -5, 5, border, width - border);
+        //stroke(255, 255, 0);
 
+        float border = pa.width * 0.1f;
+        float x = PApplet.map(xG, -5, 5, border, pa.width - border); // It's calling a method on the class PApplet rather than the instance PApplet -> map is static method
+        float y = PApplet.map(yG, -5, 5, border, pa.width - border);
+        pa.stroke(255, 255, 0);
+        pa.line(x - 5, y, x + 5, y);
+        pa.line(x, y - 5, x, y + 5);
+        pa.stroke(255, 0, 0);
+        pa.noFill();
+        pa.circle(x, y, absMag); // width, height, size
+        pa.fill(255);
+        pa.textAlign(PApplet.LEFT, PApplet.CENTER);
+        pa.text(displayName, x + 10, y);
 
+    }
 
     public Star(boolean hab, String displayName, float distance, float xG, float yG, float zG, float absMag)// Parameterised constructor which will take the default values for all of those fileds
     {

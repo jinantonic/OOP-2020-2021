@@ -15,6 +15,11 @@ public class StarMap extends PApplet
     // This is an empty arraylist that currently has no elements in it
     ArrayList<Star> stars = new ArrayList<Star>(); // Array list holding the star object (generic -> passing a type to a parameter)
 
+    int startStar = -1;
+    int endStar = -1;
+
+     
+
     // Draw grid
     void drawGrid()
     {
@@ -35,7 +40,6 @@ public class StarMap extends PApplet
             fill(255); 
             text(i, x, border / 2);
             text(i, border / 2, y);
-            
         }
     }
 
@@ -66,14 +70,30 @@ public class StarMap extends PApplet
 
     public void settings()
     {
-        size(500, 500);
+        size(800, 800);
     }
 
     float border;
 
-    public void mouseClicked()
+    public void mouseClicked() // Gets called when your mouse is on the screen
     {
-       println("Mouse clicked");
+        float border = width * 0.1f;
+        //println("Mouse clicked");
+        // I have to know which star is clicked
+        // Iterate through all of the stars and see which star is clicked 
+        for(int i = 0; i < stars.size(); i ++)
+        {
+            Star s = stars.get(i); // Index into an arraylist as oppose to an array    
+            float x = map(s.getxG(), -5, 5, border, width - border);
+            float y = map(s.getyG(), -5, 5, border, height - border);
+            // Distance from the mouse to the centre point of the star to see if it's lesser than the radius of the star 
+            if(dist(mouseX, mouseY, x, y) < s.getAbsMag() / 2)
+            {
+                println(s.getDisplayName());
+                break;
+            }
+            
+        }
     }
 
     public void setup()
@@ -84,10 +104,18 @@ public class StarMap extends PApplet
         
     }
 
-   
+    public void drawStars()
+    {
+        for(Star s: stars)
+        {
+            s.render(this); // this points to the current object
+        }
+    }
+
     public void draw()
     {
        background(0);
        drawGrid();
+       drawStars();
     }
 }
