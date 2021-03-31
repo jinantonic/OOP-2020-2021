@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class StarMap extends PApplet
+public class StarMapSke extends PApplet
 {
     public void settings()
     {
