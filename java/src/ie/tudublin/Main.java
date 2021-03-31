@@ -55,59 +55,11 @@ public class Main
         String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new Arrays()); // instanciate the BugZap here
     }
-<<<<<<< HEAD
-=======
-    
-    public void life()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Life1());
-    }
-    
-    public void colorfulLife()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new ColorfulLife());
-    }
-
-    public void starMap()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new StarMap());
-    }
-    public void gantt()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Gantt());
-    }
-
-    public void audio1()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Audio1());
-    }
-
-    public void audio2()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Audio2());
-    }
-
-    public void yasc()
-    {
-        String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new YASC());
-    }
->>>>>>> 5ae38403b2ffcbd4df282bb6c8b0ac491ebc16da
 
     public static void main(String[] args)
     {
         Main main = new Main();
-<<<<<<< HEAD
         main.arrays(); // start the BugZap class
-=======
-        main.yasc();
->>>>>>> 5ae38403b2ffcbd4df282bb6c8b0ac491ebc16da
     }
     
     
