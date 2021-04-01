@@ -6,7 +6,6 @@ import processing.core.PApplet;
 import processing.data.Table;
 import processing.data.TableRow;
 
-
 public class StarMap extends PApplet
 {
     // Load an array list of start object
@@ -73,22 +72,43 @@ public class StarMap extends PApplet
 
     float border;
 
+    // If the mouse is clikcked here, it's iterating over and i'm finding the distance and so on
     public void mouseClicked() // Gets called when your mouse is on the screen
     {
-        float border = width * 0.1f;
+        
         //println("Mouse clicked");
         // I have to know which star is clicked
         // Iterate through all of the stars and see which star is clicked 
         for(int i = 0; i < stars.size(); i ++)
         {
-            Star s = stars.get(i); // Index into an arraylist as oppose to an array    
+            Star s = stars.get(i); // Index into an arraylist as oppose to an array  
+            // I'm taking xG and yG fields of each star and mapping it from the range from -5 to 5 and mapping it on to from border to width-border and height-border
+            // So that's calculating the centre point of each star
             float x = map(s.getxG(), -5, 5, border, width - border);
             float y = map(s.getyG(), -5, 5, border, height - border);
+            // And then i'm checking to see if the distance between mouse X and Y and the x and y codinates is less than the radius of the star = that means i clicked inside of the circle
             // Distance from the mouse to the centre point of the star to see if it's lesser than the radius of the star 
             if(dist(mouseX, mouseY, x, y) < s.getAbsMag() / 2)
             {
-                println(s.getDisplayName());
-                break;
+                // Now i have to see is it the first star or the second star clicked? 
+                if(startStar == -1) // I haven't clicked any star yet 
+                {
+                    startStar = i; // Clicked on the first star 
+                    break;
+                }
+                else if(endStar == -1) // The startStar is clicked already but the endStar hasn't been clicked
+                {
+                    endStar = i; // Clicked on the second star 
+                    break;
+                }
+                else // startStar != -1 && endStar != -1 -> Already clicked on 2 stars
+                {
+                    // Now i clicked the new startStar
+                    startStar = i;
+                    endStar = -1;
+                }
+                //println(s.getDisplayName()); // Print out the displayName 
+                //break;
             }
             
         }
@@ -96,6 +116,7 @@ public class StarMap extends PApplet
 
     public void setup()
     {
+        border = width * 0.1f;
         colorMode(RGB);
         loadStars();
         printStars();
@@ -115,5 +136,34 @@ public class StarMap extends PApplet
        background(0);
        drawGrid();
        drawStars();
+       if(startStar != -1 && endStar == -1) // I have clicked the startStar but endStar
+       {
+            // Then draw the line between the startStar and the endStar
+            Star s = stars.get(startStar);
+            stroke(255, 255, 0);
+            // Calculate the centre of the star
+            float x = map(s.getxG(), -5, 5, border, width - border);
+            float y = map(s.getyG(), -5, 5, border, height - border);
+            line(x, y, mouseX, mouseY);
+        }
+        else if(startStar != -1 && endStar != -1) // I have clicked on both stars
+        {
+            Star s = stars.get(startStar); // 1st star
+            stroke(255, 255, 0);
+            // Need to draw the line between 2 stars
+            float x1 = map(s.getxG(), -5, 5, border, width - border);
+            float y1 = map(s.getyG(), -5, 5, border, height - border);
+
+            Star s1 = stars.get(endStar); // 2nd star
+            float x2 = map(s1.getxG(), -5, 5, border, width - border);
+            float y2 = map(s1.getyG(), -5, 5, border, height - border);
+            line(x1, y1, x2, y2);
+
+            // Print the distance between 2 stars
+            float dist = dist(s.getxG(), s.getyG(), s.getzG(), s1.getxG(), s1.getyG(), s1.getzG());
+            stroke(255);
+            textAlign(CENTER, CENTER);
+            text("Distance between " + s.getDisplayName() + " and " + s1.getDisplayName() + " is " + dist + " parsecs", width / 2, height - (border / 2));
+        }
     }
 }
