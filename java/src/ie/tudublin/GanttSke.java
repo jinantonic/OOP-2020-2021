@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Gantt extends PApplet {
+public class GanttSke extends PApplet {
 
     public void setup()
     {
