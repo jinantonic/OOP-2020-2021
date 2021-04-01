@@ -18,8 +18,6 @@ public class StarMap extends PApplet
     int startStar = -1;
     int endStar = -1;
 
-     
-
     // Draw grid
     void drawGrid()
     {

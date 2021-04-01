@@ -91,7 +91,7 @@ public class Star
         this.distance = distance;
         this.xG = xG;
         this.yG = yG;
-        this.zG = zG; 
+        this.zG = zG;
         this.absMag = absMag;// Now all of the fields are assigned 
     }
 
