@@ -29,8 +29,6 @@ public class Star
     // 1. Haven't clicked anything
     // 2. Clicked one star and want to draw the line to one star to the next star
     // 3. Have clicked two stars
-    
-
 
     // Constructor -> The method that gets called when the object gets created
     // They don't have a return type 
@@ -95,12 +93,6 @@ public class Star
         this.absMag = absMag;// Now all of the fields are assigned 
     }
 
-    
-
-
-
-
-
     public boolean isHab()
     {
         return hab;
@@ -158,10 +150,6 @@ public class Star
     {
         this.absMag = absMag;
     }
-
-   
-
-   
 
     // toString method is the method that gets called automatically whenever you pass this object to something that expects a string
     // Source action -> generate toString()
