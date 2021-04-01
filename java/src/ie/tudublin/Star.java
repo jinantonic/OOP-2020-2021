@@ -95,12 +95,6 @@ public class Star
         this.absMag = absMag;// Now all of the fields are assigned 
     }
 
-    
-
-
-
-
-
     public boolean isHab()
     {
         return hab;
