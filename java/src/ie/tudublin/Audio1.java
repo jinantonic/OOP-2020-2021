@@ -19,6 +19,8 @@ public class Audio1 extends PApplet
     public void settings()
     {
         size(512, 512);
+        //size(512, 512, P3D);
+        //fullScreen(P3D, SPAN);
     }
 
     /*float y = 400;
@@ -93,12 +95,71 @@ public class Audio1 extends PApplet
             }
             case 2:
             {
-                
+                for(int i = 0; i < ab.size(); i++) 
+                {
+                    float c = map(i, 0, ab.size(), 0, 255);
+                    stroke(c, 255, 255);
+
+                    lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f); 
+                    // Draw once from the left side of the screen going outwards
+                    line(0, i, lerpedBuffer[i]* halfHeight * 4, i);
+                    line(width, i, width - (lerpedBuffer[i] * halfHeight * 4), i); // Right handside coming inwards
+                    line(i, 0, i, lerpedBuffer[i]* halfHeight * 4); // Top of the screen
+                    line(i, height , i, height - (lerpedBuffer[i] * halfHeight * 4)); // Up tp screen
+                }
+                break;
             }
             case 3:
             {
-                
+                // Mapping the amplitude on to the colour
+                float c = map(average, 0, 1, 0, 255);
+                stroke(c, 255, 255);
+                strokeWeight(2); // Thicker lines
+                noFill();
+
+                //ellipse(width / 4, 100, 50 + (average * 500), 50 +  (average * 500));
+                ellipse(width / 2, 100, 50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
+                break;
             }
+            case 4:
+            {
+                float c = map(average, 0, 1, 0, 255);
+                stroke(c, 255, 255);
+                strokeWeight(2); // Thicker lines
+                noFill();
+                rectMode(CENTER); // When we use rect, the x,y cordinates are centre of the rectangle
+                float size = 50 + (lerpedAverage * 500);
+                rect(width / 2, height / 2, size, size);
+                break;
+            }
+            case 5:
+            {
+                float r = 1f; // radius
+                int numPoints = 3; // no. of points that we are gonna calculate on the outside of a spiral
+                float thetaInc = TWO_PI / (float)numPoints;
+                strokeWeight(2);
+                stroke(255);
+                float lastX = width / 2; 
+                float lastY = height / 2;
+                for(int i = 0; i < 1000; i++) // Calculate 1000 points on the outside of a spiral -> doing that for 1000 times
+                {
+                    float c = map(i, 0, 300, 0, 255) % 255.0f;
+                    stroke(c, 255, 255, 100);
+                    float theta = i * (thetaInc + lerpedAverage * 5);
+                    float x = width / 2 + sin(theta) * r; // Calculating the points on the outside of the circle 
+                    float y = height / 2 - cos(theta) * r;
+                    r += 0.5f + lerpedAverage; // Increase the radius by some small amount
+                    numPoints++;
+                    //point(x, y);
+                    line(lastX, lastY, x, y); // Drawing a line from previously calculated to the current calculated point
+                    lastX = x;
+                    lastY = y;
+                }
+                break;
+            }
+            
+
+    
         }
     }
 }
