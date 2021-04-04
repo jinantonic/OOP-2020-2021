@@ -79,6 +79,8 @@ public class Audio1 extends PApplet
         average = sum / (float) ab.size();
         
         lerpedAverage = lerp(lerpedAverage, average, 0.1f);
+        // If i change t value from 0.1f to 0.01f, it's going to take 100 frames to get to actually close to it 
+        // If you decrease the number, you'll get more smoothness but less responsiveness
 
         ellipse(width / 4, 100, average * 500, average * 500);
         ellipse(width / 2, 100, 50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
