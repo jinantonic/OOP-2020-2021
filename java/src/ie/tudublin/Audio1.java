@@ -54,23 +54,52 @@ public class Audio1 extends PApplet
         float halfHeight = height / 2;
         float average = 0;
         float sum = 0;
-        // Iterate over the audio buffer
+        // Iterate over all the elementsthe audio buffer
         for(int i = 0; i < ab.size(); i++) // ab is an array list of audio buffer so ab.size() gives us the size of array buffer
         {
-            float c = map(i, 0, ab.size(), 0, 255);
-            stroke(c, 255, 255);
-
-            lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f); // Every frame i lerped from the old value of the lerped buffer to the value to the value in the audio buffer by 10%
-
-            line(i, halfHeight - lerpedBuffer[i] * halfHeight * 4, halfHeight + lerpedBuffer[i] * halfHeight * 4, i);
             sum += abs(ab.get(i)); // This is how you look inside the arraylist and get element i out of the arraylist
         }
 
         average = sum / (float) ab.size();
         lerpedAverage = lerp(lerpedAverage, average, 0.1f);
-       
-        ellipse(width / 4, 100, average * 500, average * 500);
-        ellipse(width / 2, 100, 50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
+
+        switch(which)
+        {
+            case 0:
+            {
+                for(int i = 0; i < ab.size(); i++) // ab is an array list of audio buffer so ab.size() gives us the size of array buffer
+                {
+                    float c = map(i, 0, ab.size(), 0, 255);
+                    stroke(c, 255, 255);
+
+                    lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f); // Every frame i lerped from the old value of the lerped buffer to the value to the value in the audio buffer by 10%
+
+                    line(i, halfHeight - lerpedBuffer[i] * halfHeight * 4, halfHeight + lerpedBuffer[i] * halfHeight * 4, i);
+                }
+                break;
+            }
+            case 1:
+            {
+                for(int i = 0; i < ab.size(); i++) // ab is an array list of audio buffer so ab.size() gives us the size of array buffer
+                {
+                    float c = map(i, 0, ab.size(), 0, 255);
+                    stroke(c, 255, 255);
+
+                    lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f); // Every frame i lerped from the old value of the lerped buffer to the value to the value in the audio buffer by 10%
+
+                    line(i, halfHeight - lerpedBuffer[i] * halfHeight * 4, i, halfHeight + lerpedBuffer[i] * halfHeight * 4);
+                }
+                break;
+            }
+            case 2:
+            {
+                
+            }
+            case 3:
+            {
+                
+            }
+        }
     }
 }
 

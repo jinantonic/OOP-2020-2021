@@ -54,7 +54,7 @@ public class Audio1 extends PApplet
         float halfHeight = height / 2;
         float average = 0;
         float sum = 0;
-        // Iterate over the audio buffer
+        // Iterate over all the elementsthe audio buffer
         for(int i = 0; i < ab.size(); i++) // ab is an array list of audio buffer so ab.size() gives us the size of array buffer
         {
             float c = map(i, 0, ab.size(), 0, 255);
@@ -68,9 +68,6 @@ public class Audio1 extends PApplet
 
         average = sum / (float) ab.size();
         lerpedAverage = lerp(lerpedAverage, average, 0.1f);
-       
-        ellipse(width / 4, 100, average * 500, average * 500);
-        ellipse(width / 2, 100, 50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));
     }
 }
 
