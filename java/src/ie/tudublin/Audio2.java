@@ -5,6 +5,11 @@ import processing.core.PApplet;
 public class Audio2 extends PApplet
 {
 
+    public void settings()
+    {
+        size(512, 512);
+    }
+    
     float y = 200;
     float lerpedY = y;
 
