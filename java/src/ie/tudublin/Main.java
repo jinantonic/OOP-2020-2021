@@ -56,6 +56,12 @@ public class Main
         processing.core.PApplet.runSketch( a, new Arrays()); // instanciate the BugZap here
     }
 
+    public void gantt()
+    {
+        String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Gantt()); // instanciate the BugZap here
+    }
+
     public void audio1()
     {
         String[] a = {"MAIN"};
