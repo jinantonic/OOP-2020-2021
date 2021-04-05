@@ -162,7 +162,7 @@ public class Audio2 extends PApplet
         textSize(24);
         fill(255);
         text("Frequency: " + freq, 10, 50); // Figure out the frequency of the music note 
-        text("Note: " + spell(freq), 10, 100);
+        text("Note: " + spell(freq), 10, 100); // Looking up the frequency in the table of frequencies
 
         calculateFrequencyBands();
         
