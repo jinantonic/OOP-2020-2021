@@ -2,9 +2,14 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Audio2 extends PApplet
+public class Audio2Ske extends PApplet
 {
 
+    public void settings()
+    {
+        size(512, 512);
+    }
+    
     float y = 200;
     float lerpedY = y;
 
