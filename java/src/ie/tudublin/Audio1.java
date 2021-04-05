@@ -18,8 +18,8 @@ public class Audio1 extends PApplet
 
     public void settings()
     {
-        size(512, 512);
-        //size(512, 512, P3D);
+        //size(512, 512);
+        size(512, 512, P3D);
         //fullScreen(P3D, SPAN);
     }
 
@@ -156,6 +156,10 @@ public class Audio1 extends PApplet
                     lastY = y;
                 }
                 break;
+            }
+            case 6:
+            {
+                box(100);// Put a cube on the screen
             }
             
 
