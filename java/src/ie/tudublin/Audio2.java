@@ -53,6 +53,31 @@ public class Audio2 extends PApplet
         , 659.25f, 739.99f, 783.99f, 880.00f, 987.77f, 1108.73f, 1174.66f, 1318.51f, 1479.98f, 1567.98f, 1760.00f, 1975.53f, 2217.46f, 2349.32f};
     String[] spellings = {"D,", "E,", "F,", "G,", "A,", "B,", "C", "D", "E", "F", "G", "A", "B","c", "d", "e", "f", "g", "a", "b", "c'", "d'", "e'", "f'", "g'", "a'", "b'", "c''", "d''"}; 
 
+    // Convert a frequency to a letter so pass in frequency as a parameter
+    String spell(float freq)
+    {
+        
+        // Return the element from the spellings array that freq is closest to in the frequency array
+        // We have to find the element in the array it is closest to and return the corresponding stirng 
+        int closestIndex = 0;
+        float smallestGap = Float.MAX_VALUE;
+
+        // Iterate over the array frequency 
+        for(int i = 0; i < frequencies.length; i++)
+        {
+            // Get the difference between the frequency and the elements of the array 
+            // If that's less than the smallest gap then smallest gap becomes that gap and smallest index becomes i 
+            float gap = abs(freq - frequencies[i]); // Absolute value -> If the value it positive, it gives us the positive value
+        
+            if(gap < smallestGap)
+            {
+                smallestGap = gap;
+                closestIndex = i;
+            }
+        }
+        return spellings[closestIndex];
+    }
+
     float log2(float f)
     {
         return log(f) / log(2.0f);
@@ -137,6 +162,7 @@ public class Audio2 extends PApplet
         textSize(24);
         fill(255);
         text("Frequency: " + freq, 10, 50); // Figure out the frequency of the music note 
+        text("Note: " + spell(freq), 10, 100);
 
         calculateFrequencyBands();
         
