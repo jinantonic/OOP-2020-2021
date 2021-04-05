@@ -19,8 +19,8 @@ public class Audio1 extends PApplet
     public void settings()
     {
         //size(512, 512);
-        size(512, 512, P3D);
-        //fullScreen(P3D, SPAN);
+        //size(1000, 1000, P3D);
+        fullScreen(P3D, SPAN);
     }
 
     /*float y = 400;
@@ -42,12 +42,32 @@ public class Audio1 extends PApplet
     
     public void keyPressed()
     {
-        if(keyCode >= '0' && keyCode <= '5')
+        if(keyCode >= '0' && keyCode <= '6')
         {
             which = keyCode - '0';
         }
+        if(keyCode == ' ')
+        {
+            if(ap.isPlaying())
+            {
+                ap.pause();
+            }
+            else
+            {
+                ap.rewind();
+                ap.play();
+            }
+        }
+        if(keyCode == 'p')
+        {
+            twoCubes =  ! twoCubes; // Flip the twoCubes value whenever i press the space bar
+        }
     }
+
+
     float lerpedAverage = 0;
+    private float angle = 0;
+    private boolean twoCubes = false;
 
     public void draw()
     {   
@@ -159,11 +179,40 @@ public class Audio1 extends PApplet
             }
             case 6:
             {
-                box(100);// Put a cube on the screen
-            }
-            
+                lights(); // Add lights 
+                strokeWeight(2);
+                float c = map(lerpedAverage, 0, 1, 0, 255); // Make the colour dependent on the average amplitude
+                stroke(100, 255, 255);
+                //noStroke();
+                noFill();
+                //fill(100, 255, 255);
+                angle += 0.01f; // 0.1f of radiance every frame
+                float s = 100 + (100 * lerpedAverage * 10); // Size of the box from the average amplitude
+                if(! twoCubes) // If we haven't hit the twoCubes button, we are going to draw one cube
+                {
+                    translate(width / 2, height / 2, 0); // Translate the origin to the new x, y, z cordinate -> move the box
+                    rotateY(angle); // Rotate the cube -> angle takes the value of radiance
+                    rotateX(angle); // Rotate x axs
+                    box(s); // Put a cube on the screen, box always gets drawn around 0, 0, 0 cordiante since it's 3d
+                }
+                else // If we have hit the twoCubes button which is the p key then draw two of them
+                {
+                    pushMatrix();
+                    translate(width / 4, height / 2, 0);
+                    rotateY(angle); 
+                    rotateX(angle); 
+                    box(s);
+                    popMatrix();
 
-    
+                    pushMatrix();
+                    translate(width / 0.75f, height / 2, 0);
+                    rotateY(angle); 
+                    rotateX(angle); 
+                    box(s);
+                    popMatrix(); // Whenever you are doing translations, you want them to be not parented so you got push and pop matrix which store the all the transform and restore the new transform subsquently
+
+                }
+            }
         }
     }
 }
