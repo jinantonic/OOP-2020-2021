@@ -55,8 +55,6 @@ public class Main
         String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new Arrays()); // instanciate the BugZap here
     }
-<<<<<<< HEAD
-=======
     
     public void life()
     {
@@ -98,16 +96,11 @@ public class Main
         String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new YASC());
     }
->>>>>>> 5ae38403b2ffcbd4df282bb6c8b0ac491ebc16da
 
     public static void main(String[] args)
     {
         Main main = new Main();
-<<<<<<< HEAD
-        main.arrays(); // start the BugZap class
-=======
         main.yasc();
->>>>>>> 5ae38403b2ffcbd4df282bb6c8b0ac491ebc16da
     }
     
     
