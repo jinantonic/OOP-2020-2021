@@ -7,15 +7,26 @@ public class YASC extends PApplet// Name has to match the file name
     boolean[] keys = new boolean[102];
 
     Player p;
+    Health h;
     
     public void settings()
     {
         size(500, 500);
     }
 
+    void checkCollisions()
+    {
+        if(dist(p.x, p.y, h.x, h.y) < p.halfW + h.halfW) // They are collided
+        {
+            p.health += 10; // It gains health
+            h.respond();
+        }
+    }
+
     public void setup()
     {
         p = new Player(this, width / 2, height / 2); // 1st parameter is reference to the PApplet so this 
+        h = new Health(this);
     }
 
     public void draw()
@@ -28,6 +39,11 @@ public class YASC extends PApplet// Name has to match the file name
         p.update();
         p.render();
 
+        h.update();
+        h.render();
+
+        // Check collisions
+        checkCollisions();
     }
 
     // This is how you can check multiple keys being held down at the same time and also there's no delay now with the keys 

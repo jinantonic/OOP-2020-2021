@@ -1,6 +1,5 @@
 package ie.tudublin;
 
-import jdk.internal.net.http.frame.PushPromiseFrame;
 import processing.core.PApplet;
 
 public class Health 
@@ -15,6 +14,7 @@ public class Health
     // Constructor
     public Health(YASC yasc) // Health is goint to determine its x and y values when it's created
     {
+        this.yasc = yasc; // Assign the field from the parameter
         respond();
     }
 
@@ -68,7 +68,7 @@ public class Health
         yasc.rectMode(PApplet.CENTER);
         yasc.stroke(255);
         yasc.noFill();
-        yasc.rect(-halfW, -halfW, w, w);
+        yasc.rect(0, 0, w, w);
         yasc.line(0, halfW, 0, -halfW);
         yasc.line(-halfW, 0, halfW, 0); // Horizontal line
         yasc.popMatrix();
@@ -79,6 +79,11 @@ public class Health
         x += dx;
         y += dy;
         rotation += 0.05f;
+
+        if(x < - halfW || x > yasc.width + halfW || y < - halfW || y > yasc.height + halfW) // If it's gone completely off the screen
+        {
+            respond();
+        }
     }
 }
 

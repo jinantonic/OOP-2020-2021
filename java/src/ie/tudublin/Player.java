@@ -13,6 +13,8 @@ public class Player
     float halfW = w / 2;
     YASC yasc; // And it has a reference to PApplet to check keys
     float rotation; // To control the amount of the rotation
+    int health = 0;
+    float speed = 5;
 
     // Constructor for the player, no return type
     public Player(YASC yasc, float x, float y)
@@ -29,7 +31,8 @@ public class Player
         // Make those 2 transforms independent
         // These transforms are matrix multiplications so we need push and pop matrix
         yasc.pushMatrix(); // Stores the old transform, then it does the translate, rotate, drawing thing
-        yasc.translate(x, y); // Move the origin by this amount 
+        yasc.translate(x, y); // Move the origin by this amount
+        yasc.text("Health: " + health, 50, 0); 
         yasc.rotate(rotation);
         // We are calling the line method on the PApplet
         //yasc.line(x - halfW, y + halfW, x , y - halfW);
@@ -44,8 +47,6 @@ public class Player
         yasc.line(0 , 0, -halfW, halfW);
         yasc.popMatrix(); // Restores everything -> puts everything back the way it was originally 
 
-        
-
     }
 
     void update() // Upate itself
@@ -57,14 +58,14 @@ public class Player
         if(yasc.checkKey(PApplet.UP)) // If we press the up arrow
         {
             //y -= 1; 
-            x += dx; // Moves to the direction which it's pointing 
-            y += dy; 
+            x += dx * speed; // Moves to the direction which it's pointing 
+            y += dy * speed; 
         }
         if(yasc.checkKey(PApplet.DOWN))
         {
             //y += 1; 
-            x -= dx;
-            y -= dy; 
+            x -= dx * speed;
+            y -= dy * speed; 
         }
         if(yasc.checkKey(PApplet.LEFT))
         {
