@@ -6,7 +6,7 @@ public class YASC extends PApplet// Name has to match the file name
 {
     boolean[] keys = new boolean[102];
 
-    Player p, p1;
+    Player p;
     
     public void settings()
     {
@@ -16,7 +16,6 @@ public class YASC extends PApplet// Name has to match the file name
     public void setup()
     {
         p = new Player(this, width / 2, height / 2); // 1st parameter is reference to the PApplet so this 
-        p1 = new Player(this, 100, 100);
     }
 
     public void draw()
@@ -28,8 +27,6 @@ public class YASC extends PApplet// Name has to match the file name
         // Player is encapsulated into this player object that does player stuff
         p.update();
         p.render();
-        p1.update();
-        p1.render();
 
     }
 
