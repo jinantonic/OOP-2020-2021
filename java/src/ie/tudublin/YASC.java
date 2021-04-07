@@ -4,25 +4,10 @@ import processing.core.PApplet;
 
 public class YASC extends PApplet// Name has to match the file name 
 {
-    boolean[] keys = new boolean[526];
+    boolean[] keys = new boolean[102];
 
-    float x, y; // x and y are going to the centre point of the player's ship
-    float w = 50; // The width of the player
-    float halfW = w / 2;
-
-    void drawPlayer(float x, float y)
-    {
-
-    }
-
-    void movePlayer()
-    {
-        if(checkKey(UP)) // If we press the up arrow
-        {
-            y -= 1; 
-        }
-    }
-
+    Player p, p1;
+    
     public void settings()
     {
         size(500, 500);
@@ -30,15 +15,27 @@ public class YASC extends PApplet// Name has to match the file name
 
     public void setup()
     {
-        x = width / 2;
-        y = height / 2;
+        p = new Player(this, width / 2, height / 2); // 1st parameter is reference to the PApplet so this 
+        p1 = new Player(this, 100, 100);
     }
 
     public void draw()
     {
+        background(0);
+        stroke(255);
+
+        // Separate instances of the player class
+        // Player is encapsulated into this player object that does player stuff
+        p.update();
+        p.render();
+        p1.update();
+        p1.render();
 
     }
 
+    // This is how you can check multiple keys being held down at the same time and also there's no delay now with the keys 
+    // Declare a boolean aray keys[] first
+    // You pass in the keys (k) and it checks the boolean array at position k or the upper case version of it 
     boolean checkKey(int k)
     {
         if (keys.length >= k)
@@ -53,12 +50,12 @@ public class YASC extends PApplet// Name has to match the file name
 
     }
 
-    public void keyPressed()
+    public void keyPressed() // Assigns the keys array at position keyCode to be true
     {
-        keys[keyCode] = true;
+        keys[keyCode] = true; // keyCode -> what key was pressed
     }
 
-    public void keyReleased()
+    public void keyReleased() // Assigns the keys array at position keyCode to be false
     {
         keys[keyCode] = false;
     }
