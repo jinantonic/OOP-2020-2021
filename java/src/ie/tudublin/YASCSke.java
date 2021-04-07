@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class YASKSke extends PApplet// Name has to match the file name 
+public class YASCSke extends PApplet// Name has to match the file name 
 {
     boolean[] keys = new boolean[526];
     
