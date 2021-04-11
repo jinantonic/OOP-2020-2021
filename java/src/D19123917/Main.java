@@ -3,7 +3,6 @@ package D19123917;
 
 public class Main
 {	
-
 	public void startUI()
 	{
 		String[] a = {"MAIN"};
