@@ -2,20 +2,15 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class Health 
+public class Health extends GameObject
 {
-    private float x, y; 
-    float dx, dy;
-    float w = 50; 
-    float halfW = w / 2;
-    YASC yasc; 
-    float rotation;
-   
+
     // Constructor
     public Health(YASC yasc) // Health is goint to determine its x and y values when it's created
     {
-        this.yasc = yasc; // Assign the field from the parameter
-        rotation = 0;
+        //this.yasc = yasc; // Assign the field from the parameter
+        //rotation = 0;
+        super(yasc, 0, 0, 0);
         respawn();   
     }
 
@@ -61,7 +56,7 @@ public class Health
         }
     } 
 
-    void render()
+    public void render()
     {
         yasc.pushMatrix();
         yasc.translate(x, y);
@@ -80,7 +75,7 @@ public class Health
         yasc.popMatrix();
     }
 
-    void update()
+    public void update()
     {
         x += dx;
         y += dy;

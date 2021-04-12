@@ -46,8 +46,9 @@ public class YASC extends PApplet// Name has to match the file name
         a.update();
         a.render();
 
-        for(Bullet b:bullets)
+        for(int i = bullets.size() - 1; i >= 0; i--) // Iterate backwards over the collection
         {
+            Bullet b = bullets.get(i);
             b.update();
             b.render();
         }

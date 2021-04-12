@@ -3,31 +3,32 @@ package ie.tudublin;
 import processing.core.PApplet;
 
 // I have encapsulated the player thing in this came into the class
-public class Player 
+public class Player extends GameObject
 {
     // Everything related to the player, i have made variables into fields
     // So these are the things that the player owns or the player has 
-    float x, y; // x and y are going to the centre point of the player's ship
-    float dx, dy;
-    float w = 50; // The width of the player
-    float halfW = w / 2;
-    YASC yasc; // And it has a reference to PApplet to check keys
-    float rotation; // To control the amount of the rotation
+    //float x, y; // x and y are going to the centre point of the player's ship
+    //float dx, dy;
+    //float w = 50; // The width of the player
+    //float halfW = w / 2;
+    //YASC yasc; // And it has a reference to PApplet to check keys
+    //float rotation; // To control the amount of the rotation
     int health = 10;
     int ammo = 10;
-    float speed = 5;
+    //float speed = 5;
 
     // Constructor for the player, no return type
     public Player(YASC yasc, float x, float y)
     {
         // Taking these parameters and assigning these values in the constructor (assigning the fields in the class from the parameters)
-        this.yasc = yasc;
-        this.x = x;
-        this.y = y;
-        rotation = 0;
+        //this.yasc = yasc;
+        //this.x = x;
+        //this.y = y;
+        //rotation = 0;
+        super(yasc, x, y, 0);
     }
     
-    void render() // Drawing itself
+    public void render() // Drawing itself
     {
         // Make those 2 transforms independent
         // These transforms are matrix multiplications so we need push and pop matrix
@@ -67,7 +68,7 @@ public class Player
         } 
     }
 
-    void update() // Upate itself
+    public void update() // Upate itself
     {
         //dx = (float) MATH.sin(rotation);
         dx = PApplet.sin(rotation);
@@ -98,35 +99,6 @@ public class Player
 
         shoot();
     }
-
-    // Getters and setters
-    public float getX()
-    {
-        return x;
-    }
-
-    public void setX(float x)
-    {
-        this.x = x;
-    }
-
-    public float getY()
-    {
-        return y;
-    }
-
-    public void setY(float y)
-    {
-        this.y = y;
-    }
-
-    public float getW()
-    {
-        return w;
-    }
-
-    public void setW(float w)
-    {
-        this.w = w;
-    }
 }
+
+    
