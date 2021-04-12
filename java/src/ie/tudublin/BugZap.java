@@ -157,7 +157,7 @@ public class BugZap extends PApplet
 		if (gameMode == 0)
 		{
 			fill(255); // text 
-			drawPlayer(playerX, playerY, playerWijjJavaJadth);
+			//drawPlayer(playerX, playerY, playerWidth, playerWidth);
 			drawBug(bugX, bugY);
 			moveBug();
 
