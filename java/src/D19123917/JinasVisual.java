@@ -63,15 +63,32 @@ public class JinasVisual extends Visual
 
         switch(which)
         {
-            case 0:
+            case 0: 
             {
                 float c = map(average, 0, 1, 0, 255);
-                stroke(c, 255, 255);        
-                strokeWeight(2);
-                noFill();
+                noStroke();
+                fill(c, 255, 255);        
+             
                 // See the difference lerping makes? It smooths out the jitteryness of average, so the visual looks smoother
                 //ellipse(width / 4, 100, 50 + average * 500, 50 + average * 500);
-                ellipse(width / 2, height / 2, 50 + (lerpedAverage * 500), 50 + (lerpedAverage * 500));                
+                ellipse(width / 2, height / 2, 300 + (lerpedAverage * 500), 300 + (lerpedAverage * 500));                
+                
+                noStroke(); 
+                fill(255);  
+                ellipse(width / 2 - 50, height / 2 - 150, 80 + (lerpedAverage * 500), 80 + (lerpedAverage * 500)); // Elmo eye balls
+                ellipse(width / 2 + 50, height / 2 - 150, 80 + (lerpedAverage * 500), 80 + (lerpedAverage * 500));
+                fill(0);
+                ellipse(width / 2 - 50, height / 2 - 150, 20 + (lerpedAverage * 500), 20 + (lerpedAverage * 500));// Elmo pupils
+                ellipse(width / 2 + 50, height / 2 - 150, 20 + (lerpedAverage * 500), 20 + (lerpedAverage * 500));
+                fill(33,363,234);
+                ellipse(width / 2, height / 2 - 90, 70 + (lerpedAverage * 500), 90 + (lerpedAverage * 500)); // Elmo nose
+                               
+                
+                
+                
+                
+                
+                
                 break;
             }
             case 1:
