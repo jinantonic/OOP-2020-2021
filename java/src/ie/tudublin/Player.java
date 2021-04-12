@@ -31,8 +31,9 @@ public class Player
         // Make those 2 transforms independent
         // These transforms are matrix multiplications so we need push and pop matrix
         yasc.pushMatrix(); // Stores the old transform, then it does the translate, rotate, drawing thing
-        yasc.translate(x, y); // Move the origin by this amount
-        yasc.text("Health: " + health, 50, 0); 
+        yasc.translate(x, y); // Move the origin by thi
+        yasc.text("Health: " + health, 50, 10); 
+        yasc.text("Amno: " + amno, 50, 10); 
         yasc.rotate(rotation);
         // We are calling the line method on the PApplet
         //yasc.line(x - halfW, y + halfW, x , y - halfW);
