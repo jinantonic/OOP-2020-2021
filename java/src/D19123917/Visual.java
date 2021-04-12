@@ -1,8 +1,10 @@
 package D19123917;
 
+
 import processing.core.PApplet;
 import ddf.minim.*;
 import ddf.minim.analysis.FFT;
+
 
 public abstract class Visual extends PApplet
 {
@@ -21,7 +23,7 @@ public abstract class Visual extends PApplet
 	private float amplitude  = 0;
 	private float smothedAmplitude = 0;
 
-	
+	//private float[] lerpedBuffer; // Make an array of the same size of the buffers
 	
 	public void startMinim() 
 	{
@@ -88,6 +90,7 @@ public abstract class Visual extends PApplet
 	public void loadAudio(String filename)
 	{
 		ap = minim.loadFile(filename, frameSize);
+		ap.play();
 		ab = ap.mix;
 	}
 
