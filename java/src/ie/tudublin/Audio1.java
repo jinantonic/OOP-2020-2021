@@ -26,6 +26,7 @@ public class Audio1 extends PApplet {
     int which = 0;
 
     public void setup() {
+        surface.setResizable(true);
         minim = new Minim(this);
         //ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
         ap = minim.loadFile("heroplanet.mp3", width);

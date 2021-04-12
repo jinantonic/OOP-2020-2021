@@ -19,10 +19,11 @@ public class YASC extends PApplet {
     ArrayList<Bullet> bullets = new ArrayList<Bullet>();
 
     public void settings() {
-        size(500, 500);
+        size(500, 500, P3D);
     }
 
     public void setup() {
+        
         p = new Player(this, width / 2, height / 2);
         h = new Health(this);
         a = new Ammo(this);
