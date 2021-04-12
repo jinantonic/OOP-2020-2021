@@ -13,7 +13,8 @@ public class Player
     float halfW = w / 2;
     YASC yasc; // And it has a reference to PApplet to check keys
     float rotation; // To control the amount of the rotation
-    int health = 0;
+    int health = 10;
+    int ammo = 10;
     float speed = 5;
 
     // Constructor for the player, no return type
@@ -32,8 +33,6 @@ public class Player
         // These transforms are matrix multiplications so we need push and pop matrix
         yasc.pushMatrix(); // Stores the old transform, then it does the translate, rotate, drawing thing
         yasc.translate(x, y); // Move the origin by thi
-        yasc.text("Health: " + health, 50, 10); 
-        yasc.text("Amno: " + amno, 50, 10); 
         yasc.rotate(rotation);
         // We are calling the line method on the PApplet
         //yasc.line(x - halfW, y + halfW, x , y - halfW);
@@ -47,7 +46,25 @@ public class Player
         yasc.line(halfW , halfW, 0, 0);
         yasc.line(0 , 0, -halfW, halfW);
         yasc.popMatrix(); // Restores everything -> puts everything back the way it was originally 
+        yasc.textSize(14);
+        yasc.text("Health: " + health, x + 50, y - 10); 
+        yasc.text("Ammo: " + ammo, x + 50, y + 10);
+    }
 
+    void shoot()
+    {
+        if(yasc.checkKey(' ')) // If the space key is pressed
+        {
+            float dist = 30;
+
+            Bullet b = new Bullet(yasc, x + (dx * 20), y + (dy * dist), rotation); // Create a bullet
+
+            
+
+
+
+            yasc.bullets.add(b); // Add the bullet b to the arraylist of bullets
+        } 
     }
 
     void update() // Upate itself
@@ -78,6 +95,8 @@ public class Player
             //x += 1; 
             rotation += 0.1f;
         }
+
+        shoot();
     }
 
     // Getters and setters
