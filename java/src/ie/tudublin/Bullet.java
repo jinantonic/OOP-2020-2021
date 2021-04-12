@@ -10,6 +10,11 @@ public class Bullet
     float speed = 5; // Bullet will travel at 5 seconds per unit
     YASC yasc;
 
+
+    // Bullets wrap around the screen
+    // Bullets live for 5 seconds then they get destroyed
+    // Update method in bullets get called 60 fps
+    
     // Constructor
     public Bullet(YASC yasc, float x, float y, float rotation) // Pass in the starting values and rotation value
     {
