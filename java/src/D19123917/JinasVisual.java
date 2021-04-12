@@ -14,6 +14,7 @@ public class JinasVisual extends Visual
 
     public void setup()
     {
+        startMinim();
         //surface.setResizable(true);
         loadAudio("heroplanet.mp3");
         colorMode(HSB);
