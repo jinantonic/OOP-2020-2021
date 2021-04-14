@@ -16,7 +16,7 @@ public class JinasVisual extends Visual
     {
         startMinim();
         surface.setResizable(true);
-        loadAudio("heroplanet.mp3");
+        loadAudio("Boney M - Rasputin Remix.mp3");
         colorMode(HSB);
     }
 
