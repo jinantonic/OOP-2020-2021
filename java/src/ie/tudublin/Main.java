@@ -99,10 +99,47 @@ public class Main
 
     public void strings()
     {
-        String s = "I may be hungry but I sure ain't weird.";
+        String s = "I may be hungry, but I sure ain't weird.";
         String a = s.substring(0, 5);
-        System.out.println(s.substring(0, 5));
+        String b = s.substring(9, 15);
+        String c = s.substring(0); // Entire screen, it's gonna read till the end 
+        String d = s.substring(34);
+
+        //System.out.println(s.substring(0, 5));
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+
+        if(s.startsWith("I may"))
+        {
+            System.out.println("Starts with I may");
+        }
+        if(s.endsWith("weird"))
+        {
+            System.out.println("Ends with weird");
+        }
+        System.out.println(s.toUpperCase());
+        
+        int hungryIndex = s.indexOf("hungry");
+        System.out.println(hungryIndex);
+
+        int weridIndex = s.lastIndexOf("e"); // Start searching backwards and return the location of the string
+        System.out.println(weridIndex);
+
+        String[] words = s.split(" ");
+
+        for(String ss: words)
+        {
+            System.out.println(ss);
+        }
+
+        for(int i = s.length() - 1; i >= 0; i--)
+        {
+            System.out.println(s.substring(i, i + 1)); // Print it by element by element
+        }
     }
+
     public static void main(String[] args)
     {
         Main main = new Main();
