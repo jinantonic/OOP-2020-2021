@@ -97,10 +97,16 @@ public class Main
         processing.core.PApplet.runSketch( a, new YASC());
     }
 
+    public void strings()
+    {
+        String s = "I may be hungry but I sure ain't weird.";
+        String a = s.substring(0, 5);
+        System.out.println(s.substring(0, 5));
+    }
     public static void main(String[] args)
     {
         Main main = new Main();
-        main.audio1();
+        main.strings();
     }
     
     
