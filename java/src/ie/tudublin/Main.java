@@ -100,7 +100,7 @@ public class Main
     public void strings()
     {
         String s = "I may be hungry, but I sure ain't weird.";
-        String a = s.substring(0, 5);
+        String a = s.substring(0, 5); // Retrieve a substring starting at 0 and finishing at character 5 - 1 (4)
         String b = s.substring(9, 15);
         String c = s.substring(0); // Entire screen, it's gonna read till the end 
         String d = s.substring(34);
@@ -111,7 +111,7 @@ public class Main
         System.out.println(c);
         System.out.println(d);
 
-        if(s.startsWith("I may"))
+        if(s.startsWith("I may")) // Returns true if s starts with "I may"
         {
             System.out.println("Starts with I may");
         }
@@ -127,16 +127,16 @@ public class Main
         int weridIndex = s.lastIndexOf("e"); // Start searching backwards and return the location of the string
         System.out.println(weridIndex);
 
-        String[] words = s.split(" ");
+        String[] words = s.split(" "); // Splits the string into multiple strings based on a delimiter
 
         for(String ss: words)
         {
             System.out.println(ss);
         }
 
-        for(int i = s.length() - 1; i >= 0; i--)
+        for(int i = s.length() - 1; i >= 0; i--) // Print the string backwards 
         {
-            System.out.println(s.substring(i, i + 1)); // Print it by element by element
+            System.out.println(s.substring(i, i + 1)); 
         }
     }
 
