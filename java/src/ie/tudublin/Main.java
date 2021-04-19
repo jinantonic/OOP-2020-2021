@@ -101,6 +101,27 @@ public class Main
     {
         String s = "I may be hungry, but I sure ain't weird.";
         
+        //String ss = s.substring(9);
+        String ss = s.substring(9, 15);
+        System.out.println(ss);
+
+        System.out.println(s.charAt(0));
+        System.out.println(s.toLowerCase());
+
+        System.out.println(s.indexOf("hungry"));
+        System.out.println(s.lastIndexOf("e"));
+
+        for(int i = s.length() - 1; i >= 0; i--)
+        {
+            System.out.println(s.charAt(i));
+            System.out.println(s.substring(i, i + 1)); // Using one character at a time using substring
+        }
+
+        for(String sss:s.split(" ")) // Splitting the words using space character
+        {
+            System.out.println(sss);
+        }
+
     }
 
     public static void main(String[] args)

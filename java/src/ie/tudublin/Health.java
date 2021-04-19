@@ -4,6 +4,12 @@ import processing.core.PApplet;
 
 public class Health extends GameObject implements PowerUp {
 
+    @Override
+    public void applyTo(Player p)
+    {
+        p.health += 10;
+        
+    }
 
     public Health(YASC yasc)
     {
@@ -113,12 +119,5 @@ public class Health extends GameObject implements PowerUp {
 
     public void setW(float w) {
         this.w = w;
-    }
-
-    @Override
-    public void applyTo(Player p)
-    {
-        p.health += 10;
-        
     }
 }
