@@ -2,6 +2,11 @@ package ie.tudublin;
 
 public class Main
 {
+    public void starmap()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new StarMap());
+    }
 
     public void gantt()
 	{
@@ -12,6 +17,6 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-		main.gantt();        
+		main.starmap();        
     }
 }
