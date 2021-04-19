@@ -1,4 +1,4 @@
-package LabRevision;
+package ie.tudublin;
 
 public class Main
 {
