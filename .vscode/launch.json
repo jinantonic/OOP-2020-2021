@@ -4,6 +4,13 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
+            "mainClass": "LabRevision.Main",
+            "projectName": "java"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
             "mainClass": "D19123917.Main",
             "projectName": "java"
         },
