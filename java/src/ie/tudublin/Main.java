@@ -17,6 +17,6 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-		main.starmap();        
+		main.gantt();        
     }
 }
