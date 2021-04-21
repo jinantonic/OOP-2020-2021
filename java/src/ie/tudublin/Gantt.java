@@ -8,8 +8,6 @@ import processing.data.TableRow;
 
 public class Gantt extends PApplet
 {	
-
-	
 	ArrayList<Task> tasks = new ArrayList<Task>();
 	
 	private float border1;
@@ -61,7 +59,6 @@ public class Gantt extends PApplet
 	{
 		Table table = loadTable("tasks.csv", "header");
 
-		
 		for(TableRow row:table.rows())
 		{
 			Task t = new Task(row);
