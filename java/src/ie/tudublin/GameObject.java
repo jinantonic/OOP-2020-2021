@@ -1,6 +1,8 @@
 package ie.tudublin;
 
+// GameObject is a superclass for everything and it's an abstract class
 // abstract means the class cannot be instantiated
+
 public abstract class GameObject {
     float x, y;
     float dx, dy;
@@ -43,6 +45,9 @@ public abstract class GameObject {
         this.w = w;
     }
 
+    // Abstract methods -> Don't have to have any body, just a semicolon
+    // Any class that extends gameObject has to implement those methods, otherwise that class is also an abstract class
+    // You can have some code in it, some constructors, methods with bodies, fields, abstract methods on it 
     // subclasses must implement these abstract methods, otherwise they will be abstract
     public abstract void render();
 

@@ -14,6 +14,9 @@ public class YASC extends PApplet {
     // Write movePlayer
 
     Player p;
+    // It has an arraylist of a gameObject
+    // This array can contain any subclass of the gameObject superclass
+    // And superclass keeps tracks of all of the things 
     ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 
     // Polymorphism!
@@ -40,13 +43,21 @@ public class YASC extends PApplet {
         text("FPS: " + frameRate, 50, 100);
         
         stroke(255);
+        
+        // Iterate through the gameObjects
         for(int i = gameObjects.size() - 1; i >= 0 ; i--)
         {
             GameObject go = gameObjects.get(i);
-            go.update();
+            go.update(); // Calls the appropriate method on the appropriate subclass of the gameObject
             go.render();
 
-            if (go instanceof PowerUp)
+            // Dynamic method binding
+            // Bc this is polymorphism, this could be any of the number of different methods might get called here depending on what the instance is 
+            // So at runtime, the runtime actually has to look up and see what type this is and what the appropriate method that i call
+
+            // We use instanceof method which is the operator in java which tells you if it implements the interface or subclass or if it's a class of a particular type and so one
+            // You can use this to check to see that 
+            if (go instanceof PowerUp) // If they are powerUp, we do the collision test
             {
                 if (dist(go.x, go.y, p.x, p.y) < go.halfW + p.halfW)
                 {

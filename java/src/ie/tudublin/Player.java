@@ -2,6 +2,8 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
+// Player is an extention of a gameObject
+// It implements its own render and update
 public class Player extends GameObject {
 
     int health = 10;

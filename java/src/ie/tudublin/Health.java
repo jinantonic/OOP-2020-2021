@@ -2,8 +2,11 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
+// Health is an extension of a gameObject (Inheritence of a gameObject)
+// It has its own render and update method
 public class Health extends GameObject implements PowerUp{
 
+    // Implement the applyTo method
     @Override
     public void applyTo(Player p) {
         p.health += 10;        
