@@ -18,8 +18,8 @@ public class Audio1 extends PApplet
 
     public void settings()
     {
-        size(512, 512);
-        //size(512, 512, P3D);
+        //size(512, 512);
+        size(512, 512, P3D);
         //fullScreen(P3D, SPAN);
     }
 
@@ -29,6 +29,7 @@ public class Audio1 extends PApplet
 
     public void setup()
     {
+        surface.setResizable(true);
         // Instantiates these different objects
         minim = new Minim(this); // Pass the reference in PApplet 
         ai = minim.getLineIn(Minim.MONO, width, 44100, 16);
