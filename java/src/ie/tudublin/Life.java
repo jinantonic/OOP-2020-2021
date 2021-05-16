@@ -19,7 +19,7 @@ public class Life extends PApplet
             {
                 if(r != row && c != col)
                 {
-                    if(getCell(board, r c))
+                    if(getCell(board, r ,c))
                     {
                         count ++;
                     }
