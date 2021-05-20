@@ -60,7 +60,7 @@ public class Star
     // Render each one of the stars onto the grid 
     public void render(PApplet pa)
     {
-        // The code below wouldn't work bc the processign libraries are stored in PApplet so have to pass papplet as a parameter
+        // The code below wouldn't work bc the processing libraries are stored in PApplet so have to pass papplet as a parameter
         //float border = width * 0.1f;
         //float x = map(xG, -5, 5, border, width - border);
         //stroke(255, 255, 0);

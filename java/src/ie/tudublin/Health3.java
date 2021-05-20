@@ -16,6 +16,7 @@ public class Health extends GameObject
 
     public  void respawn()
     {
+        // Roll a dice
         int dice = (int) yasc.random(5); // Generate the random number between 0 and 3.999999999 
         switch(dice)
         {

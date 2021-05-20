@@ -2,7 +2,7 @@ package ie.tudublin;
 
 import processing.core.PApplet;
 
-public class YASC extends PApplet// Name has to match the file name 
+public class YASC extends PApplet // Name has to match the file name 
 {
     boolean[] keys = new boolean[102];
 
