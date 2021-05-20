@@ -8,6 +8,12 @@ public class Main
         processing.core.PApplet.runSketch( a, new StarMap());
     }
 
+    public void starmap2()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new StarMap2());
+    }
+
     public void gantt()
 	{
 		String[] a = {"MAIN"};
@@ -23,6 +29,6 @@ public class Main
     public static void main(String[] arg)
     {
         Main main = new Main();
-		main.starmap();        
+		main.starmap2();        
     }
 }
