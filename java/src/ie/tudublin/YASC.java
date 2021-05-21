@@ -4,7 +4,7 @@ import processing.core.PApplet;
 
 public class YASC extends PApplet // Name has to match the file name 
 {
-    boolean[] keys = new boolean[102];
+    boolean[] keys = new boolean[1024];
 
     Player p, p1;
     
@@ -30,10 +30,10 @@ public class YASC extends PApplet // Name has to match the file name
         p.render();
         p1.update();
         p1.render();
-
     }
 
-    // This is how you can check multiple keys being held down at the same time and also there's no delay now with the keys 
+    // This is how you can check multiple keys being held down at the same time 
+    // and also there's no delay now with the keys 
     // Declare a boolean aray keys[] first
     // You pass in the keys (k) and it checks the boolean array at position k or the upper case version of it 
     boolean checkKey(int k)
@@ -59,5 +59,4 @@ public class YASC extends PApplet // Name has to match the file name
     {
         keys[keyCode] = false;
     }
-
 }

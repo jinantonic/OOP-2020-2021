@@ -5,7 +5,7 @@ import processing.core.PApplet;
 // I have encapsulated the player thing in this came into the class
 public class Player 
 {
-    // Everything related to the player, i have made variables into fields
+    // Everything related to the player, I have made variables into fields
     // So these are the things that the player owns or the player has 
     float x, y; // x and y are going to the centre point of the player's ship
     float dx, dy;
@@ -17,7 +17,8 @@ public class Player
     // Constructor for the player, no return type
     public Player(YASC yasc, float x, float y)
     {
-        // Taking these parameters and assigning these values in the constructor (assigning the fields in the class from the parameters)
+        // Taking these parameters and assigning these values in the constructor
+        // Assigning the fields in the class from the parameters
         this.yasc = yasc;
         this.x = x;
         this.y = y;
@@ -28,7 +29,7 @@ public class Player
     {
         // Make those 2 transforms independent
         // These transforms are matrix multiplications so we need push and pop matrix
-        yasc.pushMatrix(); // Stores the old transform, then it does the translate, rotate, drawing thing
+        yasc.pushMatrix(); // Stores the old transform, then it does the translate, rotate, draw thing
         yasc.translate(x, y); // Move the origin by this amount 
         yasc.rotate(rotation);
         // We are calling the line method on the PApplet
@@ -43,9 +44,6 @@ public class Player
         yasc.line(halfW , halfW, 0, 0);
         yasc.line(0 , 0, -halfW, halfW);
         yasc.popMatrix(); // Restores everything -> puts everything back the way it was originally 
-
-        
-
     }
 
     void update() // Upate itself

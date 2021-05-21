@@ -2,6 +2,12 @@ package ie.tudublin;
 
 public class Main
 {
+    public void yasc()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new YASC());
+    }
+
     public void starmap()
 	{
 		String[] a = {"MAIN"};
