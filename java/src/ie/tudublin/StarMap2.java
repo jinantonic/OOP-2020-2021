@@ -8,7 +8,7 @@ import processing.data.TableRow;
 
 public class StarMap2 extends PApplet
 {
-    ArrayList<Star2> stars = new ArrayList<Star2>(); // Array list holding the star object (generic -> passing a type to a parameter)
+   // Array list holding the star object (generic -> passing a type to a parameter)
     
     public void setup()
     {
@@ -21,6 +21,7 @@ public class StarMap2 extends PApplet
     void render()
     {
         Star2 s = new Star2();
+        ArrayList<Star2> stars = new ArrayList<Star2>(); 
         s.setDisplayName("DIT");
         stars.add(s);
 

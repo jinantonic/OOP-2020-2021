@@ -6,7 +6,8 @@ import processing.data.TableRow;
 public class Star2
 {
     private String displayName;
-    private float xG, yG;
+    private float xG;
+    private float yG;
 
     public Star2() // Defalut constructor -> constructor that takes no parameters
     {
